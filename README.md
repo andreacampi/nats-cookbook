@@ -14,12 +14,13 @@ Platform
 Tested on:
 
 * Ubuntu 10.04
+* Ubuntu 12.04
 
 Cookbooks
 ---------
 
-Requires Opscode's bluepill cookbook for creating init scripts and
-trotter's cloudfoundry-common cookbook.
+* cloudfoundry
+* rbenv
 
 Usage
 =====
@@ -27,24 +28,25 @@ Usage
 This cookbook will install a Nats Server on the target node along with
 the necessary configuration files and init scripts to run it. Because
 Nats is used so heavily by CloudFoundry, this cookbook relies on the
-`cloudfoundry-common` cookbook for installing Ruby 1.9.2 and specifying
-common config directories.
+`cloudfoundry` cookbook for common functionality.
 
 Attributes
 ==========
 
-* `nats_server[:host]` - Nats will bind to this host. Default is `0.0.0.0"`.
-* `nats_server[:port]` - Nats will bind to this port. Default is `4222"`.
-* `nats_server[:user]` - Clients will connect to nats as this user. Default is `nats"`.
-* `nats_server[:password]` - Clients will connect to nats with this password. Default is `nats"`.
-* `nats_server[:pid_file]` - Where to write Nats's pid. Default is `File.join(node[:cloudfoundry_common][:pid_dir], "nats-server.pid")`.
-* `nats_server[:log_file]` - Where to write Nats's logs. Default is `File.join(node[:cloudfoundry_common][:log_dir], "nats-server.log")`.
+* `node['nats_server']]['host']` - Nats will bind to this host. Default is `0.0.0.0"`.
+* `node['nats_server']['port']` - Nats will bind to this port. Default is `4222"`.
+* `node['nats_server']['user']` - Clients will connect to nats as this user. Default is `nats"`.
+* `node['nats_server']['password']` - Clients will connect to nats with this password. Default is `nats"`.
+* `node['nats_server']['pid_file']` - Where to write Nats's pid. Default is `File.join(node['cloudfoundry']['pid_dir'], "nats-server.pid")`.
+* `node['nats_server']['log_file']` - Where to write Nats's logs. Default is `File.join(node['cloudfoundry']['log_dir'], "nats-server.log")`.
 
 License and Author
 ==================
 
+Author:: Andrea Campi (<andrea.campi@zephirworks.com>)
 Author:: Trotter Cashion (<cashion@gmail.com>)
 
+Copyright:: 2012 ZephirWorks
 Copyright:: 2012 Trotter Cashion
 
 Licensed under the Apache License, Version 2.0 (the "License");

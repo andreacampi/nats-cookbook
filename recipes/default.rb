@@ -1,8 +1,9 @@
 #
-# Cookbook Name:: nats-server-cookbook
+# Cookbook Name:: nats-server
 # Recipe:: default
 #
 # Copyright 2012, Trotter Cashion
+# Copyright 2012, ZephirWorks
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,17 +17,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include_recipe 'cloudfoundry-common'
+include_recipe 'cloudfoundry'
 
-gem_binaries_path = File.join(rbenv_root, "versions", node.cloudfoundry_common.ruby_1_9_2_version, "bin")
+gem_binaries_path = ruby_bin_path(node['cloudfoundry']['ruby_1_9_2_version'])
 
 rbenv_gem "nats" do
-  ruby_version node.cloudfoundry_common.ruby_1_9_2_version
+  ruby_version node['cloudfoundry']['ruby_1_9_2_version']
 end
 
 cloudfoundry_component "nats-server" do
   component_name "nats-server"
-  pid_file     node.nats_server.pid_file
-  log_file     node.nats_server.log_file
-  binary       File.join(gem_binaries_path, "nats-server")
+  pid_file     node['nats_server']['pid_file']
+  log_file     node['nats_server']['log_file']
+  bin_file     File.join(gem_binaries_path, "nats-server")
 end
