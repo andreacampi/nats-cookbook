@@ -17,17 +17,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include_recipe 'cloudfoundry'
 
-gem_binaries_path = ruby_bin_path(node['cloudfoundry']['ruby_1_9_2_version'])
+node.default['nats_server']['ruby_version'] = node['cloudfoundry']['ruby_1_9_2_version']
+ruby_ver = node['nats_server']['ruby_version']
+ruby_path = ruby_bin_path(ruby_ver)
+
+include_recipe "rbenv::default"
+include_recipe "rbenv::ruby_build"
+
+rbenv_ruby ruby_ver
 
 rbenv_gem "nats" do
-  ruby_version node['cloudfoundry']['ruby_1_9_2_version']
+  ruby_version ruby_ver
 end
 
 cloudfoundry_component "nats-server" do
-  component_name "nats-server"
-  pid_file     node['nats_server']['pid_file']
-  log_file     node['nats_server']['log_file']
-  bin_file     File.join(gem_binaries_path, "nats-server")
+  component_name  "nats-server"
+  pid_file        node['nats_server']['pid_file']
+  log_file        node['nats_server']['log_file']
+  bin_file        File.join(ruby_path, "nats-server")
 end
