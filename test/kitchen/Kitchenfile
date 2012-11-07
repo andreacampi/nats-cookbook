@@ -1,0 +1,3 @@
+cookbook "nats-server" do
+  runtimes []
+end
