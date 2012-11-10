@@ -1,3 +1,4 @@
 cookbook "nats-server" do
   runtimes []
+  lint false # File name too long
 end
