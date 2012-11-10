@@ -10,15 +10,17 @@ SITE
       runit (>= 0.0.0)
       yum (>= 0.0.0)
     logrotate (1.0.2)
-    ohai (1.0.2)
-    rbenv (1.4.0)
+    ohai (1.1.2)
+    rbenv (1.4.1)
       git (>= 0.0.0)
-      ohai (~> 1.0.2)
+      ohai (>= 1.1)
     runit (0.15.0)
     yum (1.0.0)
 
-PATH
-  remote: ../../../../cloudfoundry
+GIT
+  remote: https://github.com/andreacampi/cloudfoundry-coobook.git
+  ref: master
+  sha: 14072442276885813551c916b0cc746b6b2ad401
   specs:
     cloudfoundry (0.99.1)
       apt (>= 0.0.0)

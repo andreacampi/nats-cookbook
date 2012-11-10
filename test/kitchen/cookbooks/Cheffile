@@ -1,7 +1,5 @@
 site 'http://community.opscode.com/api/v1'
 
-if respond_to?(:env)
-  cookbook 'cloudfoundry', :path => env.root_path.join('../../../cloudfoundry').to_s
-else
-  cookbook 'cloudfoundry', :path => '../../../../cloudfoundry'
-end
+cookbook "cloudfoundry",
+  :git => "https://github.com/andreacampi/cloudfoundry-coobook.git",
+  :ref => "master"
