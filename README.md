@@ -33,7 +33,7 @@ Nats is used so heavily by CloudFoundry, this cookbook relies on the
 Attributes
 ==========
 
-* `node['nats_server']]['host']` - Nats will bind to this host. Default is `0.0.0.0"`.
+* `node['nats_server']['host']` - Nats will bind to this host. Default is `0.0.0.0"`.
 * `node['nats_server']['port']` - Nats will bind to this port. Default is `4222"`.
 * `node['nats_server']['user']` - Clients will connect to nats as this user. Default is `nats"`.
 * `node['nats_server']['password']` - Clients will connect to nats with this password. Default is `nats"`.
