@@ -31,10 +31,10 @@ Cookbooks
 Attributes
 ==========
 
-* `node['nats_server']['host']` - Nats will bind to this host. Default is `0.0.0.0"`.
-* `node['nats_server']['port']` - Nats will bind to this port. Default is `4222"`.
-* `node['nats_server']['user']` - Clients will connect to nats as this user. Default is `nats"`.
-* `node['nats_server']['password']` - Clients will connect to nats with this password. Default is `nats"`.
+* `node['nats_server']['host']` - Nats will bind to this host. Default is `0.0.0.0`.
+* `node['nats_server']['port']` - Nats will bind to this port. Default is `4222`.
+* `node['nats_server']['user']` - Clients will connect to nats as this user. Default is `nats`.
+* `node['nats_server']['password']` - Clients will connect to nats with this password. Default is `nats`.
 * `node['nats_server']['pid_file']` - Where to write Nats's pid. Default is `File.join(node['cloudfoundry']['pid_dir'], "nats-server.pid")`.
 * `node['nats_server']['log_file']` - Where to write Nats's logs. Default is `File.join(node['cloudfoundry']['log_dir'], "nats-server.log")`.
 * `node['nats_server']['ruby_version']` - Ruby version to use to run Nats. Default is `node['cloudfoundry']['ruby_1_9_2_version']`; there should be no reason to change it.
