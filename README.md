@@ -1,7 +1,13 @@
 Description
 ===========
 
-Installs and configures a Nats Server.
+Installs and configures a [Nats](https://github.com/derekcollison/nats)
+server for use with CloudFoundry.
+
+This cookbook will install a Nats Server on the target node along with
+the necessary configuration files and init scripts to run it. Because
+Nats is used so heavily by CloudFoundry, this cookbook relies on the
+`cloudfoundry` cookbook for common functionality.
 
 Requirements
 ============
@@ -21,14 +27,6 @@ Cookbooks
 
 * cloudfoundry
 * rbenv
-
-Usage
-=====
-
-This cookbook will install a Nats Server on the target node along with
-the necessary configuration files and init scripts to run it. Because
-Nats is used so heavily by CloudFoundry, this cookbook relies on the
-`cloudfoundry` cookbook for common functionality.
 
 Attributes
 ==========
