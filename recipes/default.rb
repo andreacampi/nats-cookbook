@@ -18,7 +18,6 @@
 # limitations under the License.
 #
 
-node.default['nats_server']['ruby_version'] = node['cloudfoundry']['ruby_1_9_2_version']
 ruby_ver = node['nats_server']['ruby_version']
 ruby_path = ruby_bin_path(ruby_ver)
 
