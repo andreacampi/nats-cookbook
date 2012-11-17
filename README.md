@@ -31,6 +31,7 @@ Cookbooks
 Attributes
 ==========
 
+* `node['nats']['gem]['version']` - Version of the nats gem to install. Default is `0.4.28`.
 * `node['nats_server']['host']` - Nats will bind to this host. Default is `0.0.0.0`.
 * `node['nats_server']['port']` - Nats will bind to this port. Default is `4222`.
 * `node['nats_server']['user']` - Clients will connect to nats as this user. Default is `nats`.

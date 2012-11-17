@@ -28,6 +28,7 @@ rbenv_ruby ruby_ver
 
 rbenv_gem "nats" do
   ruby_version ruby_ver
+  version node['nats']['gem']['version']
 end
 
 cloudfoundry_component "nats-server" do

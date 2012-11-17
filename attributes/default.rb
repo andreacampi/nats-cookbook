@@ -20,6 +20,9 @@
 
 include_attribute "cloudfoundry"
 
+# Version of the nats gem to install.
+default['nats']['gem']['version'] = "0.4.28"
+
 # Nats will bind to this host.
 default['nats_server']['host']       = "0.0.0.0"
 
