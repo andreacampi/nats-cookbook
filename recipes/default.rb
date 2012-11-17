@@ -35,4 +35,5 @@ cloudfoundry_component "nats-server" do
   pid_file        node['nats_server']['pid_file']
   log_file        node['nats_server']['log_file']
   bin_file        File.join(ruby_path, "nats-server")
+  action          [:create, :enable]
 end
