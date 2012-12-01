@@ -40,6 +40,24 @@ Attributes
 * `node['nats_server']['log_file']` - Where to write Nats's logs. Default is `File.join(node['cloudfoundry']['log_dir'], "nats-server.log")`.
 * `node['nats_server']['ruby_version']` - Ruby version to use to run Nats. Default is `node['cloudfoundry']['ruby_1_9_2_version']`; there should be no reason to change it.
 
+Recipes
+=======
+
+default
+-------
+
+At this time the default recipe does nothing.
+
+client
+------
+
+Installs the `nats` gem for use as a client, i.e. in order to get the CLI tools.
+
+server
+------
+
+Installs the `nats` gem for use as a server, configures it and runs it as a daemon.
+
 License and Author
 ==================
 
