@@ -1,7 +1,7 @@
 require File.expand_path('../support/helpers', __FILE__)
 
-describe 'nats-server::default' do
-  include Helpers::NatsServer
+describe 'nats::server' do
+  include Helpers::Nats
 
   it 'creates a config file' do
     file('/etc/cloudfoundry/nats-server.yml').must_exist # FIXME .with(:owner, 'cloudfoundry')

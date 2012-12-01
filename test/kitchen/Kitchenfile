@@ -1,4 +1,5 @@
-cookbook "nats-server" do
+cookbook "nats" do
+  configuration "server"
   runtimes []
   lint false # File name too long
 end
