@@ -1,9 +1,9 @@
 #
-# Cookbook Name:: nats-server
+# Cookbook Name:: nats
 # Attributes:: default
 #
-# Copyright 2012, Trotter Cashion
 # Copyright 2012, ZephirWorks
+# Copyright 2012, Trotter Cashion
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
