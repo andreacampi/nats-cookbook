@@ -27,12 +27,12 @@ describe 'nats::server' do
     upstart_file.must_match %r{^author\s+.+$}
     upstart_file.must_match %r{^start on \(net-device-up.*and filesystem.*and runlevel \[2345\]\)$}m
     upstart_file.must_match %r{^stop on runlevel \[016\]$}
-    upstart_file.must_match %r{^env PATH="/opt/rbenv/versions/1.9.2-p290/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"$}
+    upstart_file.must_match %r{^env PATH="/opt/rbenv/versions/1.9.3-p286/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"$}
     upstart_file.must_match %r{^export PATH$}
     upstart_file.must_match %r{^pre-start script
   mkdir -p `dirname '/var/run/cloudfoundry/nats-server.pid'`
   chown cloudfoundry:cloudfoundry `dirname '/var/run/cloudfoundry/nats-server.pid'`
 end script$}m
-    upstart_file.must_match %r{^exec start-stop-daemon --start --chuid cloudfoundry --pid /var/run/cloudfoundry/nats-server.pid --startas /opt/rbenv/versions/1.9.2-p290/bin/ruby -- /opt/rbenv/versions/1.9.2-p290/bin/nats-server -c /etc/cloudfoundry/nats-server.yml}
+    upstart_file.must_match %r{^exec start-stop-daemon --start --chuid cloudfoundry --pid /var/run/cloudfoundry/nats-server.pid --startas /opt/rbenv/versions/1.9.3-p286/bin/ruby -- /opt/rbenv/versions/1.9.3-p286/bin/nats-server -c /etc/cloudfoundry/nats-server.yml}
   end
 end

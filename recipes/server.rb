@@ -21,7 +21,7 @@
 node.default['nats_server']['pid_file']   = File.join(node['cloudfoundry']['pid_dir'], "nats-server.pid")
 node.default['nats_server']['log_file']   = File.join(node['cloudfoundry']['log_dir'], "nats-server.log")
 
-node.default['nats_server']['ruby_version'] = node['cloudfoundry']['ruby_1_9_2_version']
+node.default['nats_server']['ruby_version'] = node['cloudfoundry']['ruby_version']
 ruby_ver = node['nats_server']['ruby_version']
 ruby_path = ruby_bin_path(ruby_ver)
 
@@ -37,6 +37,7 @@ end
 
 cloudfoundry_component "nats-server" do
   component_name  "nats-server"
+  ruby_version    ruby_ver
   pid_file        node['nats_server']['pid_file']
   log_file        node['nats_server']['log_file']
   bin_file        File.join(ruby_path, "nats-server")
